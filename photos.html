@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Beautiful Memories 💖</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Pacifico&display=swap');
+
+        /* Background with a soft pink gradient */
+        body {
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb);
+            text-align: center;
+            font-family: 'Pacifico', cursive;
+            padding: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        h1 {
+            color: #d63384;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .photo-container {
+            width: 220px;
+            position: relative;
+            text-align: center;
+        }
+
+        .photo {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .photo:hover {
+            transform: scale(1.1);
+        }
+
+        .desc {
+            font-size: 1.2em;
+            color: #6a1b4d;
+            margin-top: 8px;
+        }
+
+        .back-button {
+            background-color: #d63384;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 25px;
+            margin-top: 20px;
+        }
+
+        .back-button:hover {
+            background-color: #a0255e;
+        }
+
+        /* Floating Hearts and Sparkles */
+        .floating {
+            position: absolute;
+            font-size: 20px;
+            opacity: 0.7;
+            animation: floatUp 5s infinite linear;
+        }
+
+        @keyframes floatUp {
+            from {
+                transform: translateY(100vh);
+                opacity: 1;
+            }
+            to {
+                transform: translateY(-10vh);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Our Beautiful Memories 💖</h1>
+
+    <div class="gallery">
+        <div class="photo-container">
+            <img class="photo" src="photo1.jpg" alt="Memory 1">
+            <p class="desc">My fav photo of ours ❤️</p>
+        </div>
+        <div class="photo-container">
+            <img class="photo" src="photo2.jpg" alt="Memory 2">
+            <p class="desc">Cutest Nashik date with my cutie</p>
+        </div>
+        <div class="photo-container">
+            <img class="photo" src="photo3.jpg" alt="Memory 3">
+            <p class="desc">Our first and best night together!!!</p>
+        </div>
+        <div class="photo-container">
+            <img class="photo" src="photo4.jpg" alt="Memory 4">
+            <p class="desc">You, me, and Mumbai ❤️</p>
+        </div>
+        <div class="photo-container">
+            <img class="photo" src="photo5.jpg" alt="Memory 5">
+            <p class="desc">Our fav corner, our fav cafe, and my fav person 💖</p>
+        </div>
+    </div>
+
+    <button class="back-button" onclick="window.location.href='sorry.html'">Back to Main Page</button>
+
+    <script>
+        function createFloatingElement() {
+            const elements = ["❤️", "✨", "💖", "🌸"];
+            const floating = document.createElement("div");
+            floating.classList.add("floating");
+            floating.innerHTML = elements[Math.floor(Math.random() * elements.length)];
+            floating.style.left = Math.random() * 100 + "vw";
+            floating.style.animationDuration = Math.random() * 3 + 2 + "s";
+            floating.style.fontSize = Math.random() * 20 + 15 + "px";
+            document.body.appendChild(floating);
+            setTimeout(() => floating.remove(), 5000);
+        }
+
+        setInterval(createFloatingElement, 300);
+    </script>
+</body>
+</html>
